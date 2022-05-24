@@ -75,3 +75,15 @@
    border-top-left-radius: 2.5px;
    border-bottom-left-radius: 2.5px;
 }
+@media screen and (max-width: 700px) {
+   .header__logo{
+       width: 50px;
+   }
+   .header{
+       height: 55px;
+   }
+   .header__searchIput {
+       width: 120px;
+   }
+
+}

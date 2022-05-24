@@ -41,13 +41,18 @@
 @media screen and (max-width: 600px) {
     .product>img {
         max-height: 200px;
-        width: 50%;
+        width: 20%;
         object-fit: contain;
         /* margin-bottom: 15px; */
     }
     .product__info {
         height: 180px;
         margin-bottom: 15px;
+        width: 100%;
+        display: column;
+    }
+    .product {
+        display: column;
     }
 
 }
