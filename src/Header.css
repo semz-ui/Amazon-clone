@@ -83,10 +83,17 @@
        height: 55px;
    }
    .header__searchIput {
-       width: 120px;
+       width: 80px;
+       margin-bottom: 500px;
    }
    .header{
        width: 100%;
+   }
+   .header__nav {
+       margin-right: 10px;
+   }
+   .header__optionBasket{
+       margin-right: 10px;
    }
 
 }
