@@ -85,5 +85,8 @@
    .header__searchIput {
        width: 120px;
    }
+   .header{
+       width: 100%;
+   }
 
 }
