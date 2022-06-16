@@ -1,0 +1,21 @@
+.login{
+    /* width: 500px; */
+    /* border: 1px; */
+    display: grid;
+    padding: 100px;
+    justify-content: center;
+    align-items: center;
+}
+.login1 {
+    border-style: groove;
+    display: grid;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    /* color: #f0c14b; */
+    border: 1px solid;
+    /* border-style: solid;  */
+    /* border-style: solid; */
+    border-color:gray
+}

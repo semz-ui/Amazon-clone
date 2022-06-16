@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Checkout from "./Checkout";
 import Login from "./Login";
 import Home from "./Home";
+import SignUp from "./SignUp";
 
 function App() {
   return (
@@ -10,9 +11,10 @@ function App() {
       <div className="app">
         {/* <Header /> */}
         <Routes>
+          <Route exact path="/" element={<Home />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Home />} />
         </Routes>
       </div>
     </Router>

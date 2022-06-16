@@ -5,7 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { useStateValue } from "./StateProvider";
 
-function Header() {
+function Header({ onChange }) {
   const [{ basket }] = useStateValue();
   console.log(basket);
   return (
@@ -15,10 +15,11 @@ function Header() {
           src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
           alt="logo"
           className="header__logo"
+          id="header__logo"
         />
       </Link>
       <div className="header__search">
-        <input type="text" className="header__searchIput" />
+        <input type="text" className="header__searchIput" onChange={onChange} />
         <SearchIcon className="header__searchIcon" />
       </div>
       <div className="header__nav">

@@ -25,18 +25,22 @@ function Checkout() {
                 <p style={{ color: "#007185" }}>Shop today's deal</p>
               </Link>
               <div style={{ marginTop: "20px" }}>
-                <button className="ck_btn ck_btn1__color">
-                  Sign in to your account
-                </button>
-                <button
-                  className="ck_btn"
-                  style={{
-                    marginLeft: "10px",
-                    backgroundColor: "rgb(234, 237, 237)",
-                  }}
-                >
-                  Sign up now
-                </button>
+                <Link to="/login">
+                  <button className="ck_btn ck_btn1__color">
+                    Sign in to your account
+                  </button>
+                </Link>
+                <Link to="/signup">
+                  <button
+                    className="ck_btn"
+                    style={{
+                      marginLeft: "10px",
+                      backgroundColor: "rgb(234, 237, 237)",
+                    }}
+                  >
+                    Sign up now
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
