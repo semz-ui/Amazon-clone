@@ -76,11 +76,11 @@
    border-top-left-radius: 2.5px;
    border-bottom-left-radius: 2.5px;
 }
-@media screen and (max-width: 580) {
-   #header__logo{
+@media screen and (max-width: 800px) {
+   .header__logo{
        /* width: 50px; */
-       display: none;
-       visibility: hidden;
+       display: none !important;
+       visibility: hidden !important;
    }
    .header{
        height: 55px;
@@ -97,6 +97,12 @@
    }
    .header__optionBasket{
        margin-right: 15px;
+   }
+   .header__search {
+    justify-content: center;
+   }
+   .header__searchIput {
+    width: 60%;
    }
 
 }

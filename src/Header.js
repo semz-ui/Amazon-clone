@@ -15,7 +15,6 @@ function Header({ onChange }) {
           src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
           alt="logo"
           className="header__logo"
-          id="header__logo"
         />
       </Link>
       <div className="header__search">
