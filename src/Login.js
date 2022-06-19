@@ -1,12 +1,52 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import "./Login.css";
-import Header from "./Header";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { login, reset } from "../src/features/auth/authSlice";
+import { toast } from "react-toastify";
 
 function Login() {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { email, password } = formData;
+
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }
+    if (isSuccess) {
+      toast.success("Log in successfully");
+      navigate("/");
+    }
+  }, [user, isError, isSuccess, message, dispatch, navigate]);
+
+  const onChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const userData = {
+      email,
+      password,
+    };
+    dispatch(login(userData));
+  };
+
   return (
     <div>
-      {/* <Header /> */}
       <div className="login">
         <div className="login1">
           <div
@@ -20,28 +60,48 @@ function Login() {
             <h1>Login</h1>
           </div>
           <form
+            onSubmit={onSubmit}
             style={{
               display: "grid",
               width: "400px",
-              height: "100px",
+              height: "170px",
+              marginBottom: "20px",
             }}
           >
             <input
               placeholder="Email"
-              type="password"
+              name="email"
+              id="email"
+              value={email}
+              onChange={onChange}
               style={{
                 borderRadius: "50px",
-                marginBottom: "10px",
+                marginBottom: "20px",
                 border: "none",
                 paddingLeft: "20px",
               }}
             />
             <input
               placeholder="password"
+              name="password"
+              id="password"
               type="password"
+              value={password}
+              onChange={onChange}
               style={{
                 borderRadius: "50px",
-                marginBottom: "10px",
+                marginBottom: "20px",
+                border: "none",
+                paddingLeft: "20px",
+              }}
+            />
+            <input
+              // placeholder="password"
+              type="submit"
+              className="basket"
+              style={{
+                borderRadius: "50px",
+                marginBottom: "20px",
                 border: "none",
                 paddingLeft: "20px",
               }}

@@ -4,10 +4,14 @@ import "./Header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { useStateValue } from "./StateProvider";
+import { useSelector } from "react-redux";
 
 function Header({ onChange }) {
   const [{ basket }] = useStateValue();
   console.log(basket);
+
+  const { user } = useSelector((state) => state.auth);
+
   return (
     <nav className="header">
       <Link to="/">
@@ -22,12 +26,20 @@ function Header({ onChange }) {
         <SearchIcon className="header__searchIcon" />
       </div>
       <div className="header__nav">
-        <Link to="/login" className="header__link">
-          <div className="header__option">
-            <span className="header__optionLineOne">Hello</span>
-            <span className="header__optionLineTwo">Sign In</span>
-          </div>
-        </Link>
+        <div className="header__option">
+          <span className="header__optionLineOne header__link">Hello</span>
+          {user ? (
+            <Link to="/profile" className="header__link">
+              <span className="header__optionLineTwo">{user.lastname}</span>
+            </Link>
+          ) : (
+            <Link to="/login" className="header__link">
+              <span className="header__optionLineTwo header__link">
+                Sign In
+              </span>
+            </Link>
+          )}
+        </div>
 
         <Link to="/" className="header__link">
           <div className="header__option">

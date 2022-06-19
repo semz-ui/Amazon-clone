@@ -1,0 +1,23 @@
+.profile_body {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.profile_button {
+   padding: 20px;
+   background-color: orange;
+   border: none;
+   border-radius: 10%;
+   cursor: pointer;
+}
+.button_div {
+    margin-top: 38%;
+    margin-left: 90%;
+}
+
+@media screen and (max-width: 800px) {
+   .button_div {
+    margin-top: 100%;
+    margin-left: 80%;
+   }
+}
