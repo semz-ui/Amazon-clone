@@ -79,6 +79,8 @@ function SignUp() {
             <h1>Register</h1>
           </div>
           <form
+            method="POST"
+            dete-netlify="true"
             onSubmit={onSubmit}
             style={{
               display: "grid",
