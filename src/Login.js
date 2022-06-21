@@ -61,7 +61,8 @@ function Login() {
           </div>
           <form
             method="POST"
-            dete-netlify="true"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
             onSubmit={onSubmit}
             style={{
               display: "grid",

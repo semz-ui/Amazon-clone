@@ -80,7 +80,9 @@ function SignUp() {
           </div>
           <form
             method="POST"
-            dete-netlify="true"
+            netlify
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
             onSubmit={onSubmit}
             style={{
               display: "grid",
