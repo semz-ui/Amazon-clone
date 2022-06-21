@@ -83,6 +83,7 @@ function SignUp() {
             netlify
             data-netlify="true"
             data-netlify-honeypot="bot-field"
+            data-netlify-recaptcha="true"
             onSubmit={onSubmit}
             style={{
               display: "grid",
